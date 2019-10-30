@@ -14,9 +14,9 @@ Particle trajectories:
 
 
 ## Directories
-1. The Encoder-Decoder is stored in directory code
+1. The Encoder-Decoder is stored in "code"
 1. Data processing code is stored in the root directory
-1. Functions is stored in func directory
+1. Functions is stored in "func"
 
 
 ![short trajectories](figs/cls2aMp1_short_zp.png?raw=true "Title")
