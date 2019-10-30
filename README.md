@@ -15,4 +15,4 @@ Particle trajectories:
 1. Functions is stored in func directory
 ```
 
-![Alt text](figs/cls2aMp1_short_zp.png?raw=true "Title")
+![short trajectories](figs/cls2aMp1_short_zp.png?raw=true "Title")
