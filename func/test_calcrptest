@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Apr  3 16:00:38 2019
+Calculate equilibrium radius with bisection method
+@author: tpeng2
+"""
+import numpy as np
+from func_calcTeq import estTeq,qTtoRH
+
+def FR(Tf,Tev,qf,rp,r_init):
+    rhow=1000
+    Sal=34.0
+    Mw=0.018015; #kg/mol %Brian 7/29/14 
+    Ru=8.3144621; #m**3*Pa/K/mol %Brian 7/29/14
+    Ms=0.05844; #kg/mol
+    Ru=8.314
+    rhoa=1.1
+    Ion=2.0;Os=1.093;Nup=2.0;Shp=2.0;Gam=7.28e-02; #N/m
+    Lv =(25.0 - 0.02274*Tf)*10.0**5
+    Volp=4/3*np.pi*rp**3
+    m_s=Sal/1000.0*(4.0/3.0*np.pi*r_init**3)*rhow;
+    rhop=(m_s+Volp*rhow)/Volp
+    TfC=Tf-273.15
+    einf = 610.94*np.exp(17.6257*TfC/(TfC+243.04))
+    q_inf = Mw/Ru*einf/Tf/rhoa
+    RHa = qf/q_inf
+    print('RHa is ',RHa)
+    Eff_C = 2.0*Mw*Gam/(Ru*rhow*rp*Tf)
+    Eff_S = Ion*Os*(Mw/Ms)*(Sal/1000.0)*rp**3/(rp**3) 
+    Eff_L = Mw*Lv/Ru*(1.0/Tf-1.0/Tev)
+    print('Eff_C=',Eff_C)
+    print('Eff_S=',Eff_S)
+    print('Eff_L=',Eff_L)
+    FR = Eff_S+Eff_L -Eff_C+np.log(RHa)
+    return FR
+
+#radius step
+drp_step=1e-7
+#residual tolerance
+eps=1e-7
+R_eq=225e-6
+R_init=35e-6
+rp1=1e-6
+rp2=22e-6/2
+qinf=0.0230
+Tinf=300.1
+RH=qTtoRH(qinf,Tinf)
+Tev=298.9
+FR1=FR(Tinf,Tev,qinf,rp1,R_init)
+FR2=FR(Tinf,Tev,qinf,rp2,R_init)
+step=0
+while((np.abs(rp1-rp2)>drp_step)&(step<=1000)):
+    rp3=(rp1+rp2)/2
+    FR3=FR(Tinf,Tev,qinf,rp3,R_init)
+    if (FR3 ==0.0):
+        rp1=rp3
+        rp2=rp3
+        break
+    elif (FR1*FR3<=0.0):
+        rp2=rp3
+    else:
+        rp1=rp3
+    step=step+1
+    if (step>1000):
+        print('r_eq did not converge')
+    FR1=FR(Tinf,Tev,qinf,rp1,R_init)
+    FR2=FR(Tinf,Tev,qinf,rp2,R_init)
+    print('rp1 is ',rp1)
+    R_eq=(rp1+rp2)/2
+print('r_eq is ',R_eq)
+
+    
+
