@@ -1,6 +1,10 @@
 # ECDC_part_Traj
 Encoder-decoder of particle trajectory
- 
+
+## Environment
+Keras 2.2.4 (tensorflow backended) 
+Cuda 9.2
+
 * Goal: Learn features from DNS-generated particle trajectories 
 Particle trajectories:
   * vertical location: z_p(t) ==> DNS vs. simplified stochastic model (starting with a simplest parabalo + noise)
@@ -9,7 +13,7 @@ Particle trajectories:
   * particle temperature T_p(t) ==> DNS vs. equilibrium temperature using Kepert (1996).
 
 
-## directories
+## Directories
 1. The Encoder-Decoder is stored in directory code
 1. Data processing code is stored in the root directory
 1. Functions is stored in func directory
