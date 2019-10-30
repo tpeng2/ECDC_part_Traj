@@ -2,8 +2,8 @@
 Encoder-decoder of particle trajectory
 
 ## Environment
-Keras 2.2.4 (tensorflow backended) 
-Cuda 9.2
+* Keras 2.2.4 (tensorflow backended) 
+* Cuda 9.2
 
 * Goal: Learn features from DNS-generated particle trajectories 
 Particle trajectories:
