@@ -9,7 +9,7 @@ Particle trajectories:
   * particle temperature T_p(t) ==> DNS vs. equilibrium temperature using Kepert (1996).
 ```
 
-## code
+## directories
 1. The Encoder-Decoder is stored in directory code
 1. Data processing code is stored in the root directory
 1. Functions is stored in func directory
