@@ -14,5 +14,5 @@ Particle trajectories:
 1. Data processing code is stored in the root directory
 1. Functions is stored in func directory
 ```
-`figs/cls2aMp1_short_zp.png`
-![Short trajectories (z-direction)](/figs/cls2aMp1_short_zp.png)
+
+![Alt text](figs/cls2aMp1_short_zp.png?raw=true "Title")
