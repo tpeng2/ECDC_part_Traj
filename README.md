@@ -7,7 +7,7 @@ Encoder-decoder of particle trajectory
 
 ## Goals
 1. Learn features from DNS-generated particle trajectories 
-1. Apply the feature to a simple trajecory to have the DNS features.
+1. Apply features learned from DNS to a simple trajecory to have the DNS features.
 
 ## Simplifications
 1. Since the DNS flow is horizontally homogeneous ==> only $`z_`$ direction matters, so drop all horizontal information in the first place.
@@ -23,9 +23,9 @@ Time series of spray droplets are inherently related, so the structure is 4x$`N_
 
 
 ## Directories
-1. The Encoder-Decoder is stored in "code"
-1. Data processing code is stored in the root directory
-1. Functions is stored in "func"
+1. 'code': Encoder-Decoder
+1. root: Data processing code is stored in the root directory
+1. 'func': Functions
 
 ## Examples of initial data ($`z_p(t)`$)
 ![short trajectories](figs/cls2aMp1_short_zp.png?raw=true "Title")
