@@ -5,9 +5,13 @@ Encoder-decoder of particle trajectory
 * Keras 2.2.4 (tensorflow backended) 
 * Cuda 9.2
 
-* Goal: Learn features from DNS-generated particle trajectories 
-Particle trajectories:
-  * vertical location: z_p(t) ==> DNS vs. simplified stochastic model (starting with a simplest parabalo + noise)
+## Goal
+1. Learn features from DNS-generated particle trajectories 
+1. Apply the feature to a simple trajecory to have the DNS features.
+
+## Particle trajectories:
+Time series of spray droplets are inherently related, so the structure is 4xN_t, where N_t is the length. All time series is resampled for a fixed time step, while it is not neccessarily to have fixed time steps in DNS.
+  * vertical location: z_p(t) ==> DNS vs. simplified stochastic model (starting with the simplest way: parabola + noise)
   * flow temprature T_f(t) ==> DNS vs. table look-up from vertical profile given estimated z_p(t)
   * flow humidity q_f(t) ==> DNS vs. table look-up from vertical profile based on estimated z_p(t)
   * particle temperature T_p(t) ==> DNS vs. equilibrium temperature using Kepert (1996).
