@@ -7,12 +7,12 @@ Particle trajectories:
   * flow temprature T_f(t) ==> DNS vs. table look-up from vertical profile given estimated z_p(t)
   * flow humidity q_f(t) ==> DNS vs. table look-up from vertical profile based on estimated z_p(t)
   * particle temperature T_p(t) ==> DNS vs. equilibrium temperature using Kepert (1996).
-```
+
 
 ## directories
 1. The Encoder-Decoder is stored in directory code
 1. Data processing code is stored in the root directory
 1. Functions is stored in func directory
-```
+
 
 ![short trajectories](figs/cls2aMp1_short_zp.png?raw=true "Title")
