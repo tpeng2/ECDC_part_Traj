@@ -5,7 +5,7 @@ Encoder-decoder of particle trajectory
 * Keras 2.2.4 (tensorflow backended) 
 * Cuda 9.2
 
-## Goal
+## Goals
 1. Learn features from DNS-generated particle trajectories 
 1. Apply the feature to a simple trajecory to have the DNS features.
 
